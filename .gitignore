@@ -1,0 +1,6 @@
+*.rpyc
+__pycache__
+
+cache/
+saves/
+tl/
