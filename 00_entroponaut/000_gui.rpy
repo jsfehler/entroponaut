@@ -1,6 +1,7 @@
 
 init -3:
     define entroponaut_gui.root_directory = "00_entroponaut"
+    define entroponaut_gui.frame_alpha = 0.75
 
 # Default settings for buttons
 define entroponaut_gui.button_borders = Borders(6, 6, 6, 6)
@@ -44,8 +45,6 @@ define entroponaut_gui.menu_height_adjustment = 26
 
 # The colour used for passive text
 define entroponaut_gui.passive_text_colour = "#787878"
-
-define entroponaut_gui.frame_alpha = 0.75
 
 define entroponaut_gui.game_menu_frame_background = Transform(Solid('#000'), alpha=entroponaut_gui.frame_alpha)
 
