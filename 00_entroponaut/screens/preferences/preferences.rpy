@@ -5,51 +5,6 @@
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#preferences
 
-screen entroponaut_slider(value=None, changed=None):
-    hbox:
-        add Frame(
-            Transform(
-                f"{entroponaut_gui.root_directory}/gui/desktop/slider/minus.svg",
-                matrixcolor=ColorizeMatrix(gui.accent_color, gui.accent_color),
-            ),
-            xsize=gui.slider_size,
-            ysize=gui.slider_size,
-        )
-        bar value value changed changed style "slider"
-        add Frame(
-            Transform(
-                f"{entroponaut_gui.root_directory}/gui/desktop/slider/plus.svg",
-                matrixcolor=ColorizeMatrix(gui.accent_color, gui.accent_color),
-            ),
-            xsize=gui.slider_size,
-            ysize=gui.slider_size,
-        )
-
-        transclude
-
-screen preference_slider(pref):
-    hbox:
-        add Frame(
-            Transform(
-                f"{entroponaut_gui.root_directory}/gui/desktop/slider/minus.svg",
-                matrixcolor=ColorizeMatrix(gui.accent_color, gui.accent_color),
-            ),
-            xsize=gui.slider_size,
-            ysize=gui.slider_size,
-        )
-        bar value Preference(pref)
-        add Frame(
-            Transform(
-                f"{entroponaut_gui.root_directory}/gui/desktop/slider/plus.svg",
-                matrixcolor=ColorizeMatrix(gui.accent_color, gui.accent_color),
-            ),
-            xsize=gui.slider_size,
-            ysize=gui.slider_size,
-        )
-
-        transclude
-
-
 screen preferences():
 
     tag menu
@@ -81,50 +36,52 @@ screen preferences():
 
             null height (4 * gui.pref_spacing)
 
-            hbox:
-                style_prefix "slider"
+            vbox:
                 box_wrap True
 
-                vbox:
-
+                hbox:
+                    style_prefix "preferences_item"
                     label _("Text Speed")
-
                     use preference_slider("text speed")
 
+                hbox:
+                    style_prefix "preferences_item"
                     label _("Auto-Forward Time")
-
                     use preference_slider("auto-forward time")
 
-                vbox:
+                null height gui.pref_spacing
 
-                    if config.has_music:
+                if config.has_music:
+                    hbox:
+                        style_prefix "preferences_item"
                         label _("Music Volume")
-
                         use preference_slider("music volume")
 
-                    if config.has_sound:
-
+                if config.has_sound:
+                    hbox:
+                        style_prefix "preferences_item"
                         label _("Sound Volume")
-
                         use preference_slider("sound volume"):
                             if config.sample_sound:
                                 textbutton _("Test") action Play("sound", config.sample_sound)
 
-                    if config.has_voice:
+                if config.has_voice:
+                    hbox:
+                        style_prefix "preferences_item"
                         label _("Voice Volume")
-
                         use preference_slider("voice volume"):
                             if config.sample_voice:
                                 textbutton _("Test") action Play("voice", config.sample_sound)
 
-                    if config.has_music or config.has_sound or config.has_voice:
-                        null height gui.pref_spacing
-
-                        textbutton _("Mute All"):
+                if config.has_music or config.has_sound or config.has_voice:
+                    hbox:
+                        style_prefix "preferences_item"
+                        label _("Mute All")
+                        button:
                             action Preference("all mute", "toggle")
-                            style "mute_all_button"
+                            style_suffix "check"
 
-            use custom_preferences()
+                use custom_preferences()
 
 
 style pref_label is gui_label
