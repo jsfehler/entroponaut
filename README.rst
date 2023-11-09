@@ -52,6 +52,7 @@ The window icon should be changed, if you don't have your own:
 To enable the `Exit Save <https://www.renpy.org/doc/html/store_variables.html#var-_quit_slot>`_, insert the following line at the top of the start label:
 
 .. code-block:: console
+
     $ _quit_slot = "quitsave"
 
 Usage
