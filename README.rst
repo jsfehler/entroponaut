@@ -12,6 +12,8 @@ Features
 
 - New load/save screen: Reimagined to better handle user-defined slot names and slot metadata.
 
+- New Options screen: Rebuilt to allow for the easy addition of custom options.
+
 - Passive statement: A new statement called 'passive' darkens text and automatically advances to the next line.
   Useful for showing menu choices after their selection.
 
@@ -47,7 +49,7 @@ The window icon should be changed, if you don't have your own:
 
     define config.window_icon = f"{entroponaut_gui.root_directory}/gui/window_icon.svg"
 
-To enable the Exit Save, insert the following line at the top of the start label:
+To enable the `Exit Save <https://www.renpy.org/doc/html/store_variables.html#var-_quit_slot>`_, insert the following line at the top of the start label:
 
 .. code-block:: console
     $ _quit_slot = "quitsave"
@@ -99,7 +101,7 @@ New Config Properties
 ---------------------
 
   .. code-block:: console
-  
+
       # Transform used for each item in the navigation menu.
       define entroponaut_config.navigation_item_transform = alpha_easein
 
