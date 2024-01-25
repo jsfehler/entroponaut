@@ -5,6 +5,22 @@ A replacement GUI for a Ren'Py project, designed for the NVL text display format
 
 Live Demo: https://jsfehler.itch.io/entroponaut
 
+.. image:: screenshots/main_menu.png
+  :width: 240
+  :alt: Main Menu
+
+.. image:: screenshots/nvl.png
+  :width: 240
+  :alt: NVL
+
+.. image:: screenshots/options.png
+  :width: 240
+  :alt: Options
+
+.. image:: screenshots/save_load.png
+  :width: 240
+  :alt: Save/Load
+
 Features
 --------
 
