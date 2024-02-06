@@ -64,7 +64,12 @@ screen file_slots(title):
                 # File info
                 hbox:
                     spacing 16
-                    add FileScreenshot(entroponaut.load_save_hovered_slot_info["slot_id"], page=entroponaut.load_save_hovered_slot_info["page"], slot=entroponaut.load_save_hovered_slot_info["slot"], empty=empty_saveload_thumbnail) xalign 0.5
+                    add FileScreenshot(
+                        entroponaut.load_save_hovered_slot_info["slot_id"],
+                        page=entroponaut.load_save_hovered_slot_info["page"],
+                        slot=entroponaut.load_save_hovered_slot_info["slot"],
+                        empty=empty_saveload_thumbnail
+                    ) xalign 0.5
 
                     vbox:
                         for metadata in entroponaut.load_save_json_metadata_display:
