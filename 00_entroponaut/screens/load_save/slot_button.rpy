@@ -74,6 +74,7 @@ screen slot_button_any(slot_id, slot_number=None, page=1, slot=False, action_typ
 
         use slot_button_hbox(slot_id=slot_id, slot_number=slot_number, page=page)
 
+# Slot button that will be disabled when the load_save screen is being used for saving.
 screen slot_button_load(slot_id, slot_number=None, page=None, slot=False, action_type=None, slot_display_name="", focus=None):
     default unique_id = f"{slot_id}_{page}"
 
