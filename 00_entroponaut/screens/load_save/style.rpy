@@ -37,10 +37,12 @@ style slot_button:
     background "entroponaut_frame_xthin"
     hover_background Solid(gui.accent_color)
     selected_background Solid(gui.accent_color)
+    insensitive_background "entroponaut_frame_xthin_insensitive"
 
 style slot_button_text:
     properties gui.button_text_properties("slot_button")
     font entroponaut_gui.button_font
+    insensitive_color gui.insensitive_color
 
 style file_info_slot_name_button:
     background None

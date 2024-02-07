@@ -10,6 +10,8 @@ init -2:
     # Accent colour for the sides of the Frame.
     image _solid_accent = Solid(gui.accent_color)
 
+    image _solid_insensitive = Solid(gui.insensitive_color)
+
     # The core of the Frame.
     image _frame_core = Frame(
         Transform("_solid_base", alpha=entroponaut_gui.frame_alpha),
@@ -95,3 +97,18 @@ image _frame_base_xthin = Composite(
 )
 
 image entroponaut_frame_xthin = Frame("_frame_base_xthin", left=2, top=2, bottom=2, tile=gui.frame_tile)
+
+# Extra Thin Insensitive
+image _v_stripe_xthin_insensitive = Transform("_solid_insensitive", ysize=2)
+image _h_stripe_xthin_insensitive = Transform("_solid_insensitive", xsize=2)
+
+image _frame_base_xthin_insensitive = Composite(
+    (100, 100),
+    (0, 0), "_v_stripe_xthin_insensitive",
+    (0, 2), Frame("_solid_base"),
+    (0, 98), "_v_stripe_xthin_insensitive",
+    (0, 0), "_h_stripe_xthin_insensitive",
+    (98, 0), "_h_stripe_xthin_insensitive",
+)
+
+image entroponaut_frame_xthin_insensitive = Frame("_frame_base_xthin_insensitive", left=2, top=2, bottom=2, tile=gui.frame_tile)
