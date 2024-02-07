@@ -5,10 +5,12 @@ from renpy.ui import Action
 """renpy
 init python:
 """
+from typing import Union
+
 def input_confirm_screen(
     message: str,
-    yes: list[Action] | None = None,
-    no: list[Action] | None = None,
+    yes: Union[list[Action], None] = None,
+    no: Union[list[Action], None] = None,
     input_action: Action = None,
 ) -> None:
     """Show the `input_confirm` screen."""
@@ -71,7 +73,7 @@ class InputConfirm(Action, DictEquality):
         self,
         prompt: str,
         yes: list[Action],
-        no: list[Action] | None = None,
+        no: Union[list[Action], None] = None,
         input_action: Action = None,
         confirm_selected: bool = False,
     ):
