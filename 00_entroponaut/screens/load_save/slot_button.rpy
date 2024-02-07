@@ -83,10 +83,6 @@ screen slot_button_load(slot_id, slot_number=None, page=None, slot=False, action
         style "slot_button"
         focus focus
 
-        if action_type == 'save':
-            at transform:
-                alpha 0.5
-
         if action_type == 'load':
             action [
                 SelectedIf( (entroponaut.load_save_last_selected_slot_info['unique_id'] == unique_id) ),
