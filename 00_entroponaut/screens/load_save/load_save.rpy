@@ -8,6 +8,12 @@
 ## www.renpy.org/doc/html/screen_special.html#load
 
 screen save():
+    # When showing the screen, clear the last selected slot.
+    # This makes the assumption that it's better UX to assume:
+    # 1. The player doesn't want to save or load the last selected slot.
+    # 2. They'll want to select a new slot.
+    # 3. They're at risk of accidentially saving over the last selected slot.
+    on ["show", "replace"] action ClearLastSaveLoadSlotInfo()
 
     tag menu
 
@@ -15,6 +21,7 @@ screen save():
 
 
 screen load():
+    on ["show", "replace"] action ClearLastSaveLoadSlotInfo()
 
     tag menu
 
@@ -43,12 +50,6 @@ screen file_slots(title):
         else:
             file_type_label = _("LOAD")
             file_action_caret = entroponaut_gui.load_caret
-
-    $ default_name = FileSaveName(
-        entroponaut.load_save_hovered_slot_info["slot_id"],
-        page=entroponaut.load_save_hovered_slot_info["page"],
-        slot=entroponaut.load_save_hovered_slot_info["slot"],
-    ) or entroponaut.placeholder_save_slot_name_callable()
 
     use game_menu(title):
 
@@ -164,8 +165,8 @@ screen file_slots(title):
                         false=InputConfirm(
                             prompt=_("Confirm Save Slot Name"),
                             yes=[FileSaveCurrent()],
-                            input_action=StartVariableInputValue(
-                                'save_name', default=False, start_value=default_name,
+                            input_action=SaveNameOrPlaceholderInputValue(
+                                default=False,
                             ),
                         )
                     ),
