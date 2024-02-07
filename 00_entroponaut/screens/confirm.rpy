@@ -59,6 +59,7 @@ style confirm_button:
     properties entroponaut_gui.button_properties("confirm_button")
     background Solid(gui.accent_color)
     hover_background Solid(gui.hover_color)
+    insensitive_background Solid(gui.insensitive_color)
 
 style confirm_button_text:
     properties gui.button_text_properties("confirm_button")
@@ -67,3 +68,4 @@ style confirm_button_text:
     outlines [ ( 0, "#000", 1, 1) ]
     bold False
     color entroponaut_gui.button_font_color
+    insensitive_color "#000"
