@@ -33,6 +33,7 @@ class FileCurrent:
         def inner() -> None:
             for k, v in kwargs.items():
                 entroponaut.load_save_hovered_slot_info[k] = v
+            renpy.restart_interaction()
         return inner
 
     @classmethod
@@ -57,13 +58,18 @@ class FileLoadCurrent(FileLoad, FileCurrent):
         except Exception:
             self.alt = f"Load slot {self.name}: [text]"
 
-    def get_sensitive(self):
-        self.slot = entroponaut.load_save_hovered_slot_info['slot']
-        return super().get_sensitive()
-
     def __call__(self) -> None:
         self.slot = entroponaut.load_save_hovered_slot_info['slot']
         super().__call__()
+
+    def get_sensitive(self) -> bool:
+        if not entroponaut.load_save_last_selected_slot_info['slot_id']:
+            return False
+
+        return super().get_sensitive()
+
+    def get_selected(self) -> bool:
+        return False
 
 
 class FileSaveCurrent(FileSave, FileCurrent):
@@ -85,7 +91,13 @@ class FileSaveCurrent(FileSave, FileCurrent):
         except Exception:
             self.alt = f"Save slot {self.name}: [text]"
 
-    def get_selected(self):
+    def get_sensitive(self) -> bool:
+        if not entroponaut.load_save_last_selected_slot_info['slot_id']:
+            return False
+
+        return super().get_sensitive()
+
+    def get_selected(self) -> bool:
         return False
 
 
@@ -94,3 +106,25 @@ class FileDeleteCurrent(FileDelete, FileCurrent):
 
     def __init__(self, confirm: bool = True):
         self.confirm = confirm
+
+    def get_sensitive(self) -> bool:
+        if not entroponaut.load_save_last_selected_slot_info['slot_id']:
+            return False
+
+        return super().get_sensitive()
+
+    def get_selected(self) -> bool:
+        return False
+
+
+class ClearLastSaveLoadSlotInfo(Action, DictEquality):
+    """Clear the record of the last load_save slot that was selected."""
+    def __call__(self):
+        entroponaut.load_save_last_selected_slot_info = {
+            "slot_id": None,
+            "page": None,
+            "unique_id": "",
+            "display_name": "",
+            "slot": None,
+        }
+        renpy.restart_interaction()
