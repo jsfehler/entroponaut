@@ -42,7 +42,7 @@ screen slot_button_any(slot_id, slot_number=None, page=1, slot=False, action_typ
         style "slot_button"
 
         # Allows each slot button to know if it should be in a selected state or not.
-        action [
+        action If( FileLoadable(slot_id, page=page, slot=slot) or (action_type == 'save'), true=[
             SelectedIf( (entroponaut.load_save_last_selected_slot_info['unique_id'] == unique_id) ),
             SetVariable(
                 "entroponaut.load_save_last_selected_slot_info", {
@@ -59,7 +59,7 @@ screen slot_button_any(slot_id, slot_number=None, page=1, slot=False, action_typ
                 (entroponaut.load_save_last_selected_slot_info['unique_id'] != unique_id),
                 Play('sound', entroponaut_config.audio.ui.loadsave_slot_action),
             ),
-        ]
+        ])
         hovered [
             FileCurrent.update(slot_id=slot_id, page=page, slot=slot),
             Queue('sound', entroponaut_config.audio.ui.loadsave_slot_hover),
@@ -84,7 +84,7 @@ screen slot_button_load(slot_id, slot_number=None, page=None, slot=False, action
         focus focus
 
         if action_type == 'load':
-            action [
+            action If( FileLoadable(slot_id, page=page, slot=slot), true=[
                 SelectedIf( (entroponaut.load_save_last_selected_slot_info['unique_id'] == unique_id) ),
                 SetVariable(
                     "entroponaut.load_save_last_selected_slot_info", {
@@ -100,7 +100,7 @@ screen slot_button_load(slot_id, slot_number=None, page=None, slot=False, action
                     (entroponaut.load_save_last_selected_slot_info['unique_id'] != unique_id),
                     Play('sound', entroponaut_config.audio.ui.loadsave_slot_action),
                 ),
-            ]
+            ])
             hovered [
                 FileCurrent.update(slot_id=slot_id, page=page, slot=slot),
                 Queue('sound', entroponaut_config.audio.ui.loadsave_slot_hover),
