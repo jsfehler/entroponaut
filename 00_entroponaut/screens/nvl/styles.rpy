@@ -1,9 +1,3 @@
-style v_choice
-
-style v_choice_text:
-    size 18
-    bold True
-
 style nvl_window is default:
     background "entroponaut_h_stripe_frame"
     xfill False
@@ -46,7 +40,7 @@ style nvl_button is button:
     xalign 0.0
     xpos 10
 
-style nvl_break_button is v_choice:
+style nvl_break_button:
     background Solid(gui.accent_color)
     ysize 48
     xsize 1.0
@@ -55,7 +49,7 @@ style nvl_break_button is v_choice:
     bottom_padding 0
     top_padding 12
 
-style nvl_break_button_text is v_choice_text:
+style nvl_break_button_text:
     xalign 0.8
     yalign 0.5
     size 32

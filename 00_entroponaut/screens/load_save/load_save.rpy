@@ -54,7 +54,7 @@ screen file_slots(title):
     use game_menu(title):
 
         frame:
-            style "v_save_load_file_slots_frame"
+            style "entroponaut_load_save_file_slots_frame"
             background None
             ymaximum 0.9
 
@@ -92,7 +92,6 @@ screen file_slots(title):
                     background "entroponaut_frame_xthin"
 
                     hbox:
-                        style_prefix "v_preferences_save_slot_header"
                         spacing 12
                         xalign 0.0
 
