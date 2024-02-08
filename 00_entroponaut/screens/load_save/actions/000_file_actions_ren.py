@@ -58,9 +58,14 @@ class FileLoadCurrent(FileLoad, FileCurrent):
         except Exception:
             self.alt = f"Load slot {self.name}: [text]"
 
-    def __call__(self) -> None:
-        self.slot = entroponaut.load_save_hovered_slot_info['slot']
-        super().__call__()
+    @property
+    def slot(self) -> str:
+        """Compatibility layer for File Actions."""
+        return entroponaut.load_save_hovered_slot_info['slot']
+
+    @slot.setter
+    def slot(self, new_value):
+        pass
 
     def get_sensitive(self) -> bool:
         if not entroponaut.load_save_last_selected_slot_info['slot_id']:
@@ -106,6 +111,11 @@ class FileDeleteCurrent(FileDelete, FileCurrent):
 
     def __init__(self, confirm: bool = True):
         self.confirm = confirm
+
+    @property
+    def slot(self) -> str:
+        """Compatibility layer for File Actions."""
+        return entroponaut.load_save_hovered_slot_info['slot']
 
     def get_sensitive(self) -> bool:
         if not entroponaut.load_save_last_selected_slot_info['slot_id']:

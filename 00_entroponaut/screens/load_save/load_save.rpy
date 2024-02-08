@@ -128,7 +128,15 @@ screen file_slots(title):
                         style_prefix "slot"
                         spacing 6
 
-                        use slot_button_load("quitsave", slot_number='Ex', page="exit", slot=True, action_type=action_type, slot_display_name=_("EXIT SAVE"), focus='load')
+                        use slot_button_load(
+                            "quitsave",
+                            slot_number='Ex',
+                            page="exit",
+                            slot=True,
+                            action_type=action_type,
+                            slot_display_name=_("EXIT SAVE"),
+                            focus='load',
+                        )
 
                         vbox:
                             spacing 6
