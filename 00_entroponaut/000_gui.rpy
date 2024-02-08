@@ -48,7 +48,7 @@ define entroponaut_gui.passive_text_colour = "#787878"
 
 define entroponaut_gui.game_menu_frame_background = Transform(Solid('#000'), alpha=entroponaut_gui.frame_alpha)
 
-init -1150 python in entroponaut_gui:
+init -999 python in entroponaut_gui:
     from store import config, layout, _preferences, Frame, Null, persistent, Action, DictEquality, gui
     import math
 

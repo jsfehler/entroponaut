@@ -1,4 +1,4 @@
-init -1985:
+init -999:
     transform ctc_fade_in:
         alpha 0.0
         pause 5.0

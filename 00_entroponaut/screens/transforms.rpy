@@ -1,4 +1,4 @@
-init -1985:
+init -999:
     transform alpha_easein(duration):
         alpha 0.0
         easein duration alpha 1.0
