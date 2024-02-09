@@ -17,6 +17,10 @@ Live Demo: https://jsfehler.itch.io/entroponaut
   :width: 240
   :alt: Options
 
+  .. image:: screenshots/set_save_name.png
+    :width: 240
+    :alt: Set Save Name
+
 .. image:: screenshots/save_load.png
   :width: 240
   :alt: Save/Load
