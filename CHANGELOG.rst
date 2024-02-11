@@ -1,6 +1,14 @@
 Changelog
 =========
 
+[0.1.1] - 2024-02-11
+--------------------
+
+Changed
+~~~~~~~
+
+- Entroponaut is now distributed as a Ren'Py template project.
+
 [0.1.0] - 2024-02-08
 --------------------
 
