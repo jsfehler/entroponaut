@@ -5,56 +5,69 @@ A replacement GUI for a Ren'Py project, designed for the NVL text display format
 
 Live Demo: https://jsfehler.itch.io/entroponaut
 
-.. image:: screenshots/main_menu.png
-  :width: 240
-  :alt: Main Menu
+.. list-table:: Features
+   :widths: auto
+   :header-rows: 1
 
-.. image:: screenshots/nvl.png
-  :width: 240
-  :alt: NVL
-
-.. image:: screenshots/options.png
-  :width: 240
-  :alt: Options
-
-.. image:: screenshots/set_save_name.png
-  :width: 240
-  :alt: Set Save Name
-
-.. image:: screenshots/save_load.png
-  :width: 240
-  :alt: Save/Load
-
-Features
---------
-
-- Scrolling text window: The NVL window is enhanced with text that scrolls into view from the bottom.
-
-- New load/save screen: Reimagined to better handle user-defined slot names and slot metadata.
-
-- New Options screen: Rebuilt to allow for the easy addition of custom options.
-
-- Passive statement: A new statement called 'passive' darkens text and automatically advances to the next line.
-  Useful for showing menu choices after their selection.
+   * -
+     -
+   * - .. image:: screenshots/nvl.png
+         :width: 240
+         :alt: NVL
+     - Scrolling text window: The NVL window is enhanced with text that scrolls into view from the bottom.
+   * - .. image:: screenshots/passive_statement.png
+         :width: 240
+         :alt: Passive Statement
+     - Passive statement: A new statement called 'passive' darkens text and automatically advances to the next line. Useful for showing menu choices after their selection.
+   * - .. image:: screenshots/options.png
+         :width: 240
+         :alt: Options
+     - New Options screen: Rebuilt to allow for the easy addition of custom options.
+   * - .. image:: screenshots/set_save_name.png
+         :width: 240
+         :alt: Set Save Name
+     - Played-Defined Save Slot Name: Players can set custom names for their save files.
+   * - .. image:: screenshots/save_load.png
+         :width: 240
+         :alt: Save/Load
+     - New load/save screen: Reimagined to better handle user-defined slot names and slot metadata.
 
 Installation
 ------------
 
-Entroponaut is designed to replace the default GUI assets and screens in a new Ren'Py project.
+- Download the latest release from `github. <https://github.com/jsfehler/entroponaut/releases/>`_
 
-.. warning::
-    If used in an existing project, it's the responsibility of the developer to
-    ensure their existing assets and screens are not overwritten or made incompatible.
+New Project
+~~~~~~~~~~~
 
-In a new Ren'Py project, the following files and folders must be removed:
+The Entroponaut project should be used as a template project.
+
+1 - If open, close the Ren'Py Launcher.
+
+2 - Unzip the release and move the `Entroponaut` folder into your Projects directory.
+
+3 - Open the Ren'Py Launcher, create a new project and select Entroponaut as the template.
+
+
+Existing Project
+~~~~~~~~~~~~~~~~
+
+Entroponaut assumes the following default files and folders are not in a project:
 
 - ``game/gui.rpy``
 - ``game/screens.rpy``
 - ``game/gui/``
 
-Afterwards, place the ``00_entroponaut/`` directory into your project's ``game/`` folder.
+If they are present and unmodified, deleting them is necessary. If they have
+been modified then they may require changes to work correctly with Entroponaut.
 
-The default `options.rpy` file also needs minor changes:
+.. warning::
+    When used in an existing project, it's the responsibility of the developer to
+    ensure their existing assets and screens are not overwritten or made incompatible.
+
+1 - Unzip the release and place the ``entroponaut_0.1.1/game/00_entroponaut/`` directory into your project's ``game/`` directory.
+
+2 - The default `options.rpy` file also needs minor changes:
 
 The following transitions should be disabled or changed, depending on your game.
 
@@ -63,11 +76,14 @@ The following transitions should be disabled or changed, depending on your game.
     # define config.window_show_transition = Dissolve(.2)
     # define config.window_hide_transition = Dissolve(.2)
 
-The window icon should be changed, if you don't have your own:
+The window icon must be changed, if you don't have your own:
 
 .. code-block:: console
 
     define config.window_icon = f"{entroponaut_gui.root_directory}/gui/window_icon.svg"
+
+Usage
+-----
 
 To enable the `Exit Save <https://www.renpy.org/doc/html/store_variables.html#var-_quit_slot>`_, insert the following line at the top of the start label:
 
@@ -75,8 +91,6 @@ To enable the `Exit Save <https://www.renpy.org/doc/html/store_variables.html#va
 
     $ _quit_slot = "quitsave"
 
-Usage
------
 
 Wherever possible, Entroponaut will use Ren'Py's existing GUI system and config.
 
