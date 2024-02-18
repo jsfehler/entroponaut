@@ -24,7 +24,9 @@ define entroponaut_gui.nav_button_text_hover_color = "#000"
 
 # Sliders
 define entroponaut_gui.slider_idle_color = "#b9d8db"
+define entroponaut_gui.slider_hover_color = "#66a3e0"
 define entroponaut_gui.slider_thumb_idle_color = "#b9d8db"
+define entroponaut_gui.slider_thumb_hover_color = "#66a3e0"
 
 # Save/Load
 define entroponaut_gui.save_load_button_font = f"{entroponaut_gui.root_directory}/fonts/noto_sans/NotoSans-Light.ttf"

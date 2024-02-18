@@ -63,7 +63,7 @@ style vscrollbar:
     hover_base_bar Frame(
         Transform(
             f"{entroponaut_gui.root_directory}/gui/desktop/scrollbar/idle_vbar.svg",
-            matrixcolor=ColorizeMatrix("#66a3e0", "#66a3e0"),
+            matrixcolor=ColorizeMatrix(entroponaut_gui.slider_hover_color, entroponaut_gui.slider_hover_color),
         ),
         left=2,
         right=2,
@@ -77,7 +77,7 @@ style vscrollbar:
 
     hover_thumb Transform(
         f"{entroponaut_gui.root_directory}/gui/desktop/scrollbar/idle_thumb.svg",
-        matrixcolor=ColorizeMatrix("#66a3e0", "#66a3e0"),
+        matrixcolor=ColorizeMatrix(entroponaut_gui.slider_thumb_hover_color, entroponaut_gui.slider_thumb_hover_color),
         xsize=gui.scrollbar_size,
         ysize=gui.scrollbar_size,
     )
@@ -100,7 +100,7 @@ style slider:
     hover_base_bar Frame(
         Transform(
             f"{entroponaut_gui.root_directory}/gui/desktop/slider/horizontal_idle_bar.svg",
-            matrixcolor=ColorizeMatrix("#66a3e0", "#66a3e0")),
+            matrixcolor=ColorizeMatrix(entroponaut_gui.slider_hover_color, entroponaut_gui.slider_hover_color)),
         gui.slider_borders,
         tile=gui.slider_tile,
     )
@@ -117,7 +117,7 @@ style slider:
     hover_thumb Frame(
         Transform(
             f"{entroponaut_gui.root_directory}/gui/desktop/slider/horizontal_idle_thumb.svg",
-            matrixcolor=ColorizeMatrix("#66a3e0", "#66a3e0"),
+            matrixcolor=ColorizeMatrix(entroponaut_gui.slider_thumb_hover_color, entroponaut_gui.slider_thumb_hover_color),
         ),
         xsize=gui.slider_size,
         ysize=gui.slider_size,

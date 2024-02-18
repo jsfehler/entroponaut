@@ -54,7 +54,10 @@ style nvl_break_button_text:
     yalign 0.5
     size 32
     font entroponaut_gui.button_font
+    color entroponaut_gui.button_font_color
+    hover_color "#000"
     outlines [ ( 0, "#000", 1, 1) ]
+    hover_outlines [ ( 0, gui.accent_color, 1, 1) ]
     bold False
 
 style nvl_break_button_caret is nvl_break_button_text:
