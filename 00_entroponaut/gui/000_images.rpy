@@ -112,3 +112,24 @@ image _frame_base_xthin_insensitive = Composite(
 )
 
 image entroponaut_frame_xthin_insensitive = Frame("_frame_base_xthin_insensitive", left=2, top=2, bottom=2, tile=gui.frame_tile)
+
+# Checkbox
+image entroponaut_checkbox_idle = Frame(
+    Transform(f"{entroponaut_gui.root_directory}/gui/desktop/button/checkbox/idle.svg", matrixcolor=ColorizeMatrix(gui.accent_color, gui.accent_color)),
+    xsize=gui.slider_size, ysize=gui.slider_size,
+)
+
+image entroponaut_checkbox_hover = Frame(
+    Transform(f"{entroponaut_gui.root_directory}/gui/desktop/button/checkbox/idle.svg", matrixcolor=ColorizeMatrix(gui.hover_color, gui.hover_color)),
+    xsize=gui.slider_size, ysize=gui.slider_size,
+)
+
+image entroponaut_checkbox_selected_idle = Frame(
+    Transform(f"{entroponaut_gui.root_directory}/gui/desktop/button/checkbox/selected_idle.svg", matrixcolor=ColorizeMatrix(gui.accent_color, gui.accent_color)),
+    xsize=gui.slider_size, ysize=gui.slider_size,
+)
+
+image entroponaut_checkbox_selected_hover = Frame(
+    Transform(f"{entroponaut_gui.root_directory}/gui/desktop/button/checkbox/selected_idle.svg", matrixcolor=ColorizeMatrix("#FFF", "#FFF")),
+    xsize=gui.slider_size, ysize=gui.slider_size,
+)
