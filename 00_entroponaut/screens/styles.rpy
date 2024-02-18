@@ -135,7 +135,7 @@ style vslider:
     thumb Frame(
         Transform(
             f"{entroponaut_gui.root_directory}/gui/desktop/slider/vertical_idle_thumb.svg",
-            matrixcolor=ColorizeMatrix("#0066cc", "#0066cc"),
+            matrixcolor=ColorizeMatrix(entroponaut_gui.slider_thumb_hover_color, entroponaut_gui.slider_thumb_hover_color),
         ),
         xsize=gui.slider_size,
         ysize=gui.slider_size,
@@ -144,7 +144,7 @@ style vslider:
     hover_thumb Frame(
         Transform(
             f"{entroponaut_gui.root_directory}/gui/desktop/slider/vertical_idle_thumb.svg",
-            matrixcolor=ColorizeMatrix("#66a3e0", "#66a3e0"),
+            matrixcolor=ColorizeMatrix(entroponaut_gui.slider_thumb_hover_color, entroponaut_gui.slider_thumb_hover_color),
         ),
         xsize=gui.slider_size,
         ysize=gui.slider_size,
