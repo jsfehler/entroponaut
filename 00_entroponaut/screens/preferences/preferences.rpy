@@ -126,31 +126,33 @@ style radio_vbox:
 
 style radio_button:
     properties entroponaut_gui.button_properties("radio_button")
-    idle_foreground Frame(Transform(f"{entroponaut_gui.root_directory}/gui/desktop/button/radio/idle.svg", matrixcolor=ColorizeMatrix(gui.accent_color, gui.accent_color)), xsize=gui.slider_size, ysize=gui.slider_size)
-    hover_foreground Frame(Transform(f"{entroponaut_gui.root_directory}/gui/desktop/button/radio/selected_idle.svg", matrixcolor=ColorizeMatrix(gui.hover_color, gui.hover_color)), xsize=gui.slider_size, ysize=gui.slider_size)
-    selected_idle_foreground Frame(Transform(f"{entroponaut_gui.root_directory}/gui/desktop/button/radio/selected_idle.svg", matrixcolor=ColorizeMatrix(gui.accent_color, gui.accent_color)), xsize=gui.slider_size, ysize=gui.slider_size)
-    selected_hover_foreground Frame(Transform(f"{entroponaut_gui.root_directory}/gui/desktop/button/radio/selected_idle.svg", matrixcolor=ColorizeMatrix("#FFF", "#FFF")), xsize=gui.slider_size, ysize=gui.slider_size)
+    idle_foreground "entroponaut_radio_idle"
+    hover_foreground "entroponaut_radio_selected_hover"
+    selected_idle_foreground "entroponaut_radio_selected_idle"
+    selected_hover_foreground "entroponaut_radio_selected_hover"
     left_padding 64
 
 style radio_button_text:
     properties gui.button_text_properties("radio_button")
     size 24
     yalign 0.5
+    hover_color gui.hover_color
 
 style check_vbox:
     spacing gui.pref_button_spacing
 
 style check_button:
     properties entroponaut_gui.button_properties("check_button")
-    idle_foreground entroponaut_checkbox_idle
-    hover_foreground entroponaut_checkbox_hover
-    selected_idle_foreground entroponaut_checkbox_selected_idle
-    selected_hover_foreground entroponaut_checkbox_selected_hover
+    idle_foreground "entroponaut_checkbox_idle"
+    hover_foreground "entroponaut_checkbox_hover"
+    selected_idle_foreground "entroponaut_checkbox_selected_idle"
+    selected_hover_foreground "entroponaut_checkbox_selected_hover"
     left_padding 64
 
 style check_button_text:
     properties gui.button_text_properties("check_button")
     size 24
+    hover_color gui.hover_color
 
 style slider_slider:
     xsize 525
