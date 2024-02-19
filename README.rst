@@ -173,9 +173,23 @@ New GUI Properties
       define entroponaut_gui.nav_button_text_idle_color = "#b9d8db"
       define entroponaut_gui.nav_button_text_hover_color = "#000"
 
+      # Checkboxes
+      define entroponaut_gui.checkbox_idle_color = "#b9d8db"
+      define entroponaut_gui.checkbox_hover_color = "#66a3e0"
+      define entroponaut_gui.checkbox_selected_idle_color = "#b9d8db"
+      define entroponaut_gui.checkbox_selected_hover_color = "#66a3e0"
+
+      # Radio buttons
+      define entroponaut_gui.radio_idle_color = "#b9d8db"
+      define entroponaut_gui.radio_hover_color = "#66a3e0"
+      define entroponaut_gui.radio_selected_idle_color = "#b9d8db"
+      define entroponaut_gui.radio_selected_hover_color = "#66a3e0"
+
       # Sliders
       define entroponaut_gui.slider_idle_color = "#b9d8db"
+      define entroponaut_gui.slider_hover_color = "#66a3e0"
       define entroponaut_gui.slider_thumb_idle_color = "#b9d8db"
+      define entroponaut_gui.slider_thumb_hover_color = "#66a3e0"
 
       # Save/Load
       define entroponaut_gui.save_load_button_font = f"{entroponaut_gui.root_directory}/fonts/noto_sans/NotoSans-Light.ttf"
