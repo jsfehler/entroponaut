@@ -1,28 +1,27 @@
 
-init -3:
+init -85:
     define entroponaut_gui.root_directory = "00_entroponaut"
     define entroponaut_gui.frame_alpha = 0.75
 
-# Default settings for buttons
-define entroponaut_gui.button_borders = Borders(6, 6, 6, 6)
-define entroponaut_gui.button_tile = False
-define entroponaut_gui.button_font = f"{entroponaut_gui.root_directory}/fonts/oswald/static/Oswald-ExtraLight.ttf"
-define entroponaut_gui.button_font_color = "#b9d8db"
+    # Default settings for buttons
+    define entroponaut_gui.button_borders = Borders(6, 6, 6, 6)
+    define entroponaut_gui.button_tile = False
+    define entroponaut_gui.button_font = f"{entroponaut_gui.root_directory}/fonts/oswald/static/Oswald-ExtraLight.ttf"
+    define entroponaut_gui.button_font_color = "#b9d8db"
 
-define entroponaut_gui.prompt_font = f"{entroponaut_gui.root_directory}/fonts/oswald/static/Oswald-ExtraLight.ttf"
+    define entroponaut_gui.prompt_font = f"{entroponaut_gui.root_directory}/fonts/oswald/static/Oswald-ExtraLight.ttf"
 
-define entroponaut_gui.label_font = f"{entroponaut_gui.root_directory}/fonts/noto_sans/NotoSans-Bold.ttf"
+    define entroponaut_gui.label_font = f"{entroponaut_gui.root_directory}/fonts/noto_sans/NotoSans-Bold.ttf"
 
-# Quick menu
-define entroponaut_gui.quick_button_font_idle_color = "#b9d8db"
-define entroponaut_gui.quick_button_font_hover_color = "#000"
+    # Quick menu
+    define entroponaut_gui.quick_button_font_idle_color = "#b9d8db"
+    define entroponaut_gui.quick_button_font_hover_color = "#000"
 
-# Navigation buttons
-define entroponaut_gui.nav_button_font = f"{entroponaut_gui.root_directory}/fonts/oswald/static/Oswald-Light.ttf"
-define entroponaut_gui.nav_button_text_idle_color = "#b9d8db"
-define entroponaut_gui.nav_button_text_hover_color = "#000"
+    # Navigation buttons
+    define entroponaut_gui.nav_button_font = f"{entroponaut_gui.root_directory}/fonts/oswald/static/Oswald-Light.ttf"
+    define entroponaut_gui.nav_button_text_idle_color = "#b9d8db"
+    define entroponaut_gui.nav_button_text_hover_color = "#000"
 
-init -85:
     # Checkboxes
     define entroponaut_gui.checkbox_idle_color = "#b9d8db"
     define entroponaut_gui.checkbox_hover_color = "#66a3e0"
