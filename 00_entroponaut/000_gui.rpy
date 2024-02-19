@@ -35,11 +35,11 @@ init -85:
     define entroponaut_gui.radio_selected_idle_color = "#b9d8db"
     define entroponaut_gui.radio_selected_hover_color = "#66a3e0"
 
-# Sliders
-define entroponaut_gui.slider_idle_color = "#b9d8db"
-define entroponaut_gui.slider_hover_color = "#66a3e0"
-define entroponaut_gui.slider_thumb_idle_color = "#b9d8db"
-define entroponaut_gui.slider_thumb_hover_color = "#66a3e0"
+    # Sliders
+    define entroponaut_gui.slider_idle_color = "#b9d8db"
+    define entroponaut_gui.slider_hover_color = "#66a3e0"
+    define entroponaut_gui.slider_thumb_idle_color = "#b9d8db"
+    define entroponaut_gui.slider_thumb_hover_color = "#66a3e0"
 
 # Save/Load
 define entroponaut_gui.save_load_button_font = f"{entroponaut_gui.root_directory}/fonts/noto_sans/NotoSans-Light.ttf"
