@@ -1,6 +1,20 @@
 Changelog
 =========
 
+
+[0.1.2] - 2024-02-18
+--------------------
+
+Changed
+~~~~~~~
+
+- The following styles: `nvl_break_button_text`, `vscrollbar`, `vslider`, `check_button`, `radio_button` now use entroponaut_gui variables for determining colour.
+
+Added
+~~~~~
+
+- `entroponaut_gui.checkbox_<state>_color` and `entroponaut_gui.radio_<state>_color` variables have been added to control the color of the checkboxes and radio buttons. Valid states are `idle`, `hover`, `selected_idle`, `selected_hover`.
+
 [0.1.1] - 2024-02-11
 --------------------
 
